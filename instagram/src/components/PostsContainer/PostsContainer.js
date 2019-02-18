@@ -8,7 +8,15 @@ class PostsContainer extends Component {
       <div className="posts-container">
         {
           this.props.posts.map((postData, index) =>
-            <Post key={index} data={postData} />
+            <Post
+              key={index}
+              username={postData.username}
+              userAvatar={postData.thumbnailUrl}
+              postContent={postData.imageUrl}
+              likes={postData.likes}
+              datePosted={postData.timestamp}
+              comments={postData.comments}
+            />
           )
         }
       </div>
