@@ -6,7 +6,9 @@ class PostsContainer extends Component {
     return (
       <div className="posts-container">
         {
-          this.props.posts.map((postData, index) => <Post key={index} data={postData}/>)
+          this.props.posts.map((postData, index) =>
+            <Post key={index} data={postData} />
+          )
         }
       </div>
     );

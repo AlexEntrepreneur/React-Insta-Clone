@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import CommentsContainer from '../CommentsContainer/CommentsContainer.js';
 
 class Post extends Component {
   render() {
@@ -12,6 +13,11 @@ class Post extends Component {
         <div className="post-img-container">
           <img src={data.imageUrl} alt={`posted by ${data.username}`} />
         </div>
+        <div className="post-btns-container">
+          <button>Like</button>
+          <button>Comment</button>
+        </div>
+        <CommentsContainer data={data.comments}/>
       </div>
     );
   }
