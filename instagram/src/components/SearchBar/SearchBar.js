@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import searchIcon from '../../assets/magnifying-glass.svg';
+import './SearchBar.css';
 
 class SearchBar extends Component {
   render() {

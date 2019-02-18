@@ -1,41 +1,14 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 451 451" style="enable-background:new 0 0 451 451;" xml:space="preserve">
-<g>
-	<path d="M447.05,428l-109.6-109.6c29.4-33.8,47.2-77.9,47.2-126.1C384.65,86.2,298.35,0,192.35,0C86.25,0,0.05,86.3,0.05,192.3
-		s86.3,192.3,192.3,192.3c48.2,0,92.3-17.8,126.1-47.2L428.05,447c2.6,2.6,6.1,4,9.5,4s6.9-1.3,9.5-4
-		C452.25,441.8,452.25,433.2,447.05,428z M26.95,192.3c0-91.2,74.2-165.3,165.3-165.3c91.2,0,165.3,74.2,165.3,165.3
-		s-74.1,165.4-165.3,165.4C101.15,357.7,26.95,283.5,26.95,192.3z"/>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="55px" height="57px" viewBox="0 0 55 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="magnifying-glass" transform="translate(-1.000000, -416.000000)" fill="#A5A7AA" fill-rule="nonzero">
+            <g id="149852" transform="translate(0.000000, 416.000000)">
+                <path d="M55.146,51.887 L41.588,37.786 C45.074,33.642 46.984,28.428 46.984,23 C46.984,10.318 36.666,0 23.984,0 C11.302,0 0.984,10.318 0.984,23 C0.984,35.682 11.302,46 23.984,46 C28.745,46 33.282,44.564 37.161,41.838 L50.822,56.046 C51.393,56.639 52.161,56.966 52.984,56.966 C53.763,56.966 54.502,56.669 55.063,56.129 C56.255,54.982 56.293,53.08 55.146,51.887 Z M23.984,6 C33.358,6 40.984,13.626 40.984,23 C40.984,32.374 33.358,40 23.984,40 C14.61,40 6.984,32.374 6.984,23 C6.984,13.626 14.61,6 23.984,6 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
 </svg>

@@ -7,7 +7,9 @@ class Post extends Component {
     return (
       <div className="card post-card">
         <header>
-          <img src={data.thumbnailUrl} alt={data.username}/>
+          <div className="post-card-avatar">
+            <img src={data.thumbnailUrl} alt={data.username}/>
+          </div>
           <h3>{ data.username }</h3>
         </header>
         <div className="post-img-container">
