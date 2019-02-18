@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './CommentsContainer.css';
 
 class CommentsContainer extends Component {
   render() {

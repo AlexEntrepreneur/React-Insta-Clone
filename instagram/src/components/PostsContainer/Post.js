@@ -21,6 +21,13 @@ class Post extends Component {
           <button>Comment</button>
         </div>
         <CommentsContainer data={comments}/>
+        <form className="comment-form" method="POST">
+          <textarea
+            className="comment-box full-width"
+            type="text"
+            placeholder="Add a comment..." />
+            <button type="submit" disabled={true}>Post</button>
+        </form>
       </article>
     );
   }
