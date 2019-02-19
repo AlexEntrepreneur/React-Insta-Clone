@@ -10,8 +10,11 @@ import logoIcon from './assets/ig-logo-icon.svg';
 class App extends Component {
   constructor() {
     super();
+
+    this.storedPostsData = JSON.parse(localStorage.getItem('ig_posts'));
+
     this.state = {
-      posts: [],
+      posts: this.storedPostsData || [],
       myUsername: 'myUsername'
     };
   }
@@ -22,8 +25,10 @@ class App extends Component {
     this.setState({ posts: dataWithIdAndDisplayKeys});
   }
 
-  // componentDidUpdate() {
-  // }
+  componentDidUpdate() {
+    const postsAsString = JSON.stringify(this.state.posts);
+    localStorage.setItem('ig_posts', postsAsString);
+  }
 
   searchPosts = searchKeyword => {
     window.scrollTo(0, 0);
