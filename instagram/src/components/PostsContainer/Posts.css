@@ -46,6 +46,34 @@
   width: 100%;
 }
 
+.post-btns-container {
+  height: 4rem;
+  display: flex;
+  align-items: center;
+}
+
+.post-btns-container button {
+  width: 2.4rem;
+  height: 2.4rem;
+  padding: 0;
+  margin-right: 1.5rem;
+  color: #262626;
+}
+
+.post-btns-container .liked-true {
+  color: #f54d5a;
+}
+
+.post-btns-container, .likes {
+  padding: 0 1.5rem;
+}
+
+.likes {
+  font-weight: bold;
+  line-height: 1.8rem;
+  margin-bottom: .8rem;
+}
+
 .comment-form {
   display: flex;
   padding: 2rem 1.5rem;

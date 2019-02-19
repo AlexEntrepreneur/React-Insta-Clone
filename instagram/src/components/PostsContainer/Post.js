@@ -7,7 +7,8 @@ class Post extends Component {
     super(props);
     this.state = {
       comments: this.props.comments,
-      myComment: ''
+      myComment: '',
+      liked: false
     }
   }
 
@@ -22,12 +23,25 @@ class Post extends Component {
     this.setState({ myComment: event.target.value });
   }
 
+  onLikeButtonClick = (liked) => {
+    this.setState(currentState => {
+      if (liked) {
+        return { liked: false };
+      }
+      else {
+        return { liked: true };
+      }
+    }, () => {
+      return this.props.likeUnlikePost(this.props.postId, this.state.liked);
+    });
+  }
+
   clearCommentInput = () => {
     this.setState({ myComment: '' });
   }
 
   render() {
-    const { username, userAvatar, postContent } = this.props;
+    const { username, userAvatar, postContent, likes } = this.props;
     return (
       <article className="card post-card">
         <header>
@@ -40,8 +54,13 @@ class Post extends Component {
           <img src={postContent} alt={`posted by ${username}`} />
         </div>
         <div className="post-btns-container">
-          <button>Like</button>
+          <button
+            onClick={() => this.onLikeButtonClick(this.state.liked)}
+            className={`liked-${this.state.liked}`}>Like</button>
           <button>Comment</button>
+        </div>
+        <div className="likes">
+          { `${likes} likes` }
         </div>
         <CommentsContainer
           comments={this.state.comments}

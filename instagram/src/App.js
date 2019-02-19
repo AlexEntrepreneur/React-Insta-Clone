@@ -31,10 +31,29 @@ class App extends Component {
           return post;
         }
         return post;
-    })
+    });
 
     this.setState({
       posts: updatedPostComments
+    });
+  }
+
+  likeUnlikePost = (postId, liked) => {
+    const updatedPosts = this.state.posts.map(post => {
+      if (post.timestamp === postId) {
+          if (liked) {
+            post.likes++;
+          }
+          else {
+            post.likes--
+          }
+          return post;
+        }
+        return post;
+    });
+
+    this.setState({
+      posts: updatedPosts
     });
   }
 
@@ -60,6 +79,7 @@ class App extends Component {
           <PostsContainer
             posts={this.state.posts}
             addCommentFunction={this.addComment}
+            likeUnlikePostFunction={this.likeUnlikePost}
           />
         </div>
       </div>
