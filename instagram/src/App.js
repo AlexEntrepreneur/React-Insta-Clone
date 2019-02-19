@@ -17,11 +17,46 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.setState({ posts: fakeData});
+    const dataWithIdAndDisplayKeys = fakeData.map(post => ({ ...post, display: true }));
+
+    this.setState({ posts: dataWithIdAndDisplayKeys});
   }
 
   // componentDidUpdate() {
   // }
+
+  searchPosts = searchKeyword => {
+    window.scrollTo(0, 0);
+    const posts = this.state.posts;
+    const filteredPostsDisplayed = posts.map(post => {
+      if (post.username.includes(searchKeyword)) {
+        return {
+          ...post,
+          display: true
+        }
+      }
+      else {
+        return {
+          ...post,
+          display: false
+        }
+      }
+    });
+
+    const allPostsDisplayed = posts.map(post => {
+      return {
+        ...post,
+        display: true
+      }
+    });
+
+    if (searchKeyword) {
+      this.setState({ posts: filteredPostsDisplayed })
+    }
+    else {
+      this.setState({ posts: allPostsDisplayed })
+    }
+  };
 
   addComment = (postId, commentObject) => {
     const updatedPostComments = this.state.posts.map(post => {
@@ -36,7 +71,7 @@ class App extends Component {
     this.setState({
       posts: updatedPostComments
     });
-  }
+  };
 
   likeUnlikePost = (postId, liked) => {
     const updatedPosts = this.state.posts.map(post => {
@@ -45,7 +80,7 @@ class App extends Component {
             post.likes++;
           }
           else {
-            post.likes--
+            post.likes--;
           }
           return post;
         }
@@ -55,7 +90,7 @@ class App extends Component {
     this.setState({
       posts: updatedPosts
     });
-  }
+  };
 
   render() {
     return (
@@ -67,7 +102,10 @@ class App extends Component {
               <div className="separator"></div>
               <img src={logo} alt="instagram logo"/>
             </a>
-            <SearchBar />
+            <SearchBar
+              searchPosts={this.searchPosts}
+              searchKeyword={this.state.searchKeyword}
+            />
             <nav className="menu-container">
               <button>Explore</button>
               <button>Likes</button>

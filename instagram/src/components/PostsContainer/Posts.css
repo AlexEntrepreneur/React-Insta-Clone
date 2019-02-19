@@ -2,6 +2,7 @@
   width: 100%;
   max-width: 62%;
   margin: 0 auto;
+  margin-top: 6rem;
 }
 
 .card {
@@ -12,11 +13,6 @@
 
 .post-card {
   margin-bottom: 6rem;
-
-}
-
-.post-card:first-child {
-  margin-top: 6rem;
 }
 
 .post-card header {

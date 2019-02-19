@@ -19,6 +19,7 @@ class PostsContainer extends Component {
               addComment={this.props.addCommentFunction}
               likeUnlikePost={this.props.likeUnlikePostFunction}
               postId={postData.timestamp}
+              display={postData.display}
             />
           )
         }

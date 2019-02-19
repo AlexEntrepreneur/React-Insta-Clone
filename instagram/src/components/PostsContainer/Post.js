@@ -43,7 +43,7 @@ class Post extends Component {
   render() {
     const { username, userAvatar, postContent, likes } = this.props;
     return (
-      <article className="card post-card">
+      <article className={`card post-card display-${this.props.display}`}>
         <header>
           <div className="post-card-avatar">
             <img src={userAvatar} alt={username}/>
