@@ -5,11 +5,11 @@ class CommentsContainer extends Component {
   render() {
     return (
       <div className="comments-container">
-      {
-        this.props.data.map((comment, index) => {
-          return <div key={index} className="comment"><span><b>{ comment.username } </b></span>{ comment.text }</div>
-        })
-      }
+          {
+            this.props.comments.map((comment, index) => {
+              return <div key={index} className="comment"><span><b>{ comment.username } </b></span>{ comment.text }</div>
+            })
+          }
       </div>
     );
   }

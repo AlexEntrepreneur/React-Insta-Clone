@@ -1,3 +1,7 @@
 .comments-container {
   padding: 0 1.5rem;
 }
+
+.comments-container .comment {
+  margin-bottom: .5rem;
+}

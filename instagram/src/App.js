@@ -11,12 +11,31 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      posts: []
+      posts: [],
+      myUsername: 'myUsername'
     };
   }
 
   componentDidMount() {
     this.setState({ posts: fakeData});
+  }
+
+  // componentDidUpdate() {
+  // }
+
+  addComment = (postId, commentObject) => {
+    const updatedPostComments = this.state.posts.map(post => {
+      if (post.timestamp === postId) {
+          commentObject.username = this.state.myUsername;
+          post.comments.push(commentObject);
+          return post;
+        }
+        return post;
+    })
+
+    this.setState({
+      posts: updatedPostComments
+    });
   }
 
   render() {
@@ -38,7 +57,10 @@ class App extends Component {
           </div>
         </header>
         <div className="main-content-container">
-          <PostsContainer posts={this.state.posts} />
+          <PostsContainer
+            posts={this.state.posts}
+            addCommentFunction={this.addComment}
+          />
         </div>
       </div>
     );

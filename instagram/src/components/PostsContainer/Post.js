@@ -3,8 +3,31 @@ import CommentsContainer from '../CommentsContainer/CommentsContainer.js';
 import { arrayOf, string, number, shape } from 'prop-types';
 
 class Post extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      comments: this.props.comments,
+      myComment: ''
+    }
+  }
+
+  onCommentSubmit = (event) => {
+    event.preventDefault();
+    const myComment = { text: this.state.myComment }
+    this.props.addComment(this.props.postId, myComment);
+    this.clearCommentInput();
+  }
+
+  onCommentInputChange = (event) => {
+    this.setState({ myComment: event.target.value });
+  }
+
+  clearCommentInput = () => {
+    this.setState({ myComment: '' });
+  }
+
   render() {
-    const { username, userAvatar, postContent, comments } = this.props;
+    const { username, userAvatar, postContent } = this.props;
     return (
       <article className="card post-card">
         <header>
@@ -20,13 +43,20 @@ class Post extends Component {
           <button>Like</button>
           <button>Comment</button>
         </div>
-        <CommentsContainer data={comments}/>
-        <form className="comment-form" method="POST">
+        <CommentsContainer
+          comments={this.state.comments}
+        />
+        <form
+          className="comment-form"
+          method="POST"
+          onSubmit={event => this.onCommentSubmit(event)} >
           <textarea
+            value={this.state.myComment}
+            onChange={event => this.onCommentInputChange(event)}
             className="comment-box full-width"
             type="text"
             placeholder="Add a comment..." />
-            <button type="submit" disabled={true}>Post</button>
+          <button type="submit" disabled={false}>Post</button>
         </form>
       </article>
     );
