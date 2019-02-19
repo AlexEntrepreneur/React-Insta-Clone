@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import CommentsContainer from '../CommentsContainer/CommentsContainer.js';
-import PropTypes from 'prop-types';
+import { arrayOf, string, number, shape } from 'prop-types';
 
 class Post extends Component {
   render() {
@@ -34,12 +34,15 @@ class Post extends Component {
 }
 
 Post.propTypes = {
-  username: PropTypes.string.isRequired,
-  userAvatar: PropTypes.string.isRequired,
-  likes: PropTypes.number.isRequired,
-  postContent: PropTypes.string.isRequired,
-  datePosted: PropTypes.string.isRequired,
-  comments: PropTypes.array,
+  username: string.isRequired,
+  userAvatar: string.isRequired,
+  likes: number.isRequired,
+  postContent: string.isRequired,
+  datePosted: string.isRequired,
+  comments: arrayOf(shape({
+    username: string.isRequired,
+    text: string.isRequired
+  })),
 };
 
 export default Post;
