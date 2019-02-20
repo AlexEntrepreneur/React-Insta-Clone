@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Post from './Post.js';
+import Post from './Post';
 import './Posts.css';
 
 class PostsContainer extends Component {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import fakeData from './dummy-data';
-import PostsContainer from './components/PostsContainer/PostsContainer.js';
-import SearchBar from './components/SearchBar/SearchBar.js';
+import PostsContainer from './components/PostsContainer/PostsContainer';
+import SearchBar from './components/SearchBar/SearchBar';
 import './App.css';
 import './Header.css';
 import logo from './assets/ig-logo.png';

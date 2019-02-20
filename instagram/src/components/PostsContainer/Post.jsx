@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import CommentsContainer from '../CommentsContainer/CommentsContainer.js';
+import CommentsContainer from '../CommentsContainer/CommentsContainer';
 import { arrayOf, string, number, shape } from 'prop-types';
 
 class Post extends Component {
@@ -14,7 +14,7 @@ class Post extends Component {
 
   onCommentSubmit = (event) => {
     event.preventDefault();
-    const myComment = { text: this.state.myComment }
+    const myComment = { username: '', text: this.state.myComment }
     this.props.addComment(this.props.postId, myComment);
     this.clearCommentInput();
   }
