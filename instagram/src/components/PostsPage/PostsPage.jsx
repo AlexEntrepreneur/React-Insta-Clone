@@ -11,10 +11,11 @@ class PostsPage extends Component {
     super();
 
     this.storedPostsData = JSON.parse(localStorage.getItem('ig_posts'));
+    this.storedUserData = localStorage.getItem('ig_user');
 
     this.state = {
       posts: this.storedPostsData || [],
-      myUsername: 'myUsername'
+      myUsername: this.storedUserData || ''
     };
   }
 
@@ -26,6 +27,10 @@ class PostsPage extends Component {
       }));
 
       this.setState({ posts: dataWithIdAndDisplayKeys});
+    }
+
+    if (!this.state.myUsername) {
+      this.setState({ myUsername: this.props.user.username });
     }
   }
 
@@ -129,6 +134,12 @@ class PostsPage extends Component {
             likeUnlikePostFunction={this.likeUnlikePost}
           />
         </div>
+        <button
+          onClick={this.props.logOut}
+          className="log-out-btn"
+        >
+          Log Out
+        </button>
       </div>
     );
   }

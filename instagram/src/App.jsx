@@ -8,7 +8,7 @@ class App extends Component {
   render() {
     if (this.props.isAuthed) {
       return (
-        <PostsPage />
+        <PostsPage logOut={this.props.logOutFunction} user={this.props.user} />
       );
     }
     return (
