@@ -20,9 +20,14 @@ class App extends Component {
   }
 
   componentDidMount() {
-    const dataWithIdAndDisplayKeys = fakeData.map(post => ({ ...post, display: true }));
+    if (this.state.posts.length === 0) {
+      const dataWithIdAndDisplayKeys = fakeData.map(post => ({
+        ...post,
+        display: true
+      }));
 
-    this.setState({ posts: dataWithIdAndDisplayKeys});
+      this.setState({ posts: dataWithIdAndDisplayKeys});
+    }
   }
 
   componentDidUpdate() {
