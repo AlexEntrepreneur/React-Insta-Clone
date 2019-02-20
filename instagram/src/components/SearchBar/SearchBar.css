@@ -2,7 +2,7 @@
   background: #fafafa;
   border: solid 1px #dbdbdb;
   border-radius: 3px;
-  max-height: 3.2rem;
+  height: 2.8rem;
   display: flex;
   align-items: center;
 }
@@ -16,4 +16,10 @@
 .search-box input {
   height: 100%;
   background: unset;
+  border: none;
+  line-height: unset;
+}
+
+.search-box input:last-of-type {
+  margin: 0;
 }

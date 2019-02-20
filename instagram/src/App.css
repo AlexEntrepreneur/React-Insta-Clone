@@ -36,6 +36,13 @@ button {
   cursor: pointer;
 }
 
+button.btn-primary {
+  background-color: #3897f0;
+  color: white;
+  padding: .7rem .9rem;
+  border-radius: .4rem;
+}
+
 button:active, button:disabled {
   opacity: .7;
 }
@@ -45,13 +52,21 @@ button:disabled {
 }
 
 input, textarea {
-  border: none;
+  margin-bottom: .6rem;
+  line-height: 3.6rem;
+  border: 1px solid #dbdbdb;
+  background-color: #fafafa;
+  border-radius: .3rem;
   color: inherit;
   font-size: inherit;
   font-weight: 600;
-  padding: .7rem;
+  padding: 0 .9rem;
   font-weight: normal;
   outline: none;
+}
+
+input:last-of-type {
+  margin-bottom: 1.5rem;
 }
 
 textarea {

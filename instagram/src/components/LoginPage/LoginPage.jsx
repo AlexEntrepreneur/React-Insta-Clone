@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './LoginPage.css';
 
 class LoginPage extends Component {
   constructor(props) {
@@ -22,14 +23,20 @@ class LoginPage extends Component {
   render() {
     return (
       <div className="login-page-container">
-        <form type="submit" onSubmit={e => this.onLoginSubmit(e)}>
+        <form
+          type="submit"
+          onSubmit={e => this.onLoginSubmit(e)}
+          className="login-form"
+        >
+          <div className="login-logo"></div>
           <input
             type="text"
             value={this.state.username}
-            placeholder="your username please"
+            placeholder="your username"
             onChange={(e) => this.onInputChange(e, e.target.name)}
             name="username"
             maxLength="75"
+            className="full-width"
           />
           <input
             type="password"
@@ -37,8 +44,9 @@ class LoginPage extends Component {
             placeholder="your password"
             onChange={(e) => this.onInputChange(e, e.target.name)}
             name="password"
+            className="full-width"
           />
-          <button type="submit">Log In</button>
+        <button type="submit" className="btn-primary full-width">Log In</button>
         </form>
       </div>
     );
