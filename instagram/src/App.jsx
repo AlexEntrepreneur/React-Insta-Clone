@@ -6,8 +6,13 @@ import './App.css';
 
 class App extends Component {
   render() {
+    if (this.props.isAuthed) {
+      return (
+        <PostsPage />
+      );
+    }
     return (
-      <LoginPage />
+      <LoginPage logIn={this.props.logInFunction} />
     );
   }
 }

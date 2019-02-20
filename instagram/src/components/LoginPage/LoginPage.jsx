@@ -16,6 +16,7 @@ class LoginPage extends Component {
 
   onLoginSubmit = (event) => {
     event.preventDefault();
+    this.props.logIn(this.state.username, this.state.password);
   }
 
   render() {
