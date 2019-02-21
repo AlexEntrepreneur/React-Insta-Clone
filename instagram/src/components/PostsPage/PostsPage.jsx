@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
 import fakeData from '../../dummy-data';
 import PostsContainer from './PostsContainer';
-import SearchBar from '../SearchBar/SearchBar';
-import '../../Header.css';
-import logo from '../../assets/ig-logo.png';
-import logoIcon from '../../assets/ig-logo-icon.svg';
+import Header from '../Header/Header';
 
 class PostsPage extends Component {
   constructor(props) {
     super(props);
-    
+
     this.prefix = props.appPrefix;
     this.storedPostsData = JSON.parse(localStorage.getItem(this.prefix + '_posts'));
     this.storedUserData = localStorage.getItem(this.prefix + '_user');
@@ -112,24 +109,7 @@ class PostsPage extends Component {
   render() {
     return (
       <div className="App">
-        <header>
-          <div className="header-content">
-            <a href="/" className="logo-container">
-              <img src={logoIcon} alt="instagram logo"/>
-              <div className="separator"></div>
-              <img src={logo} alt="instagram logo"/>
-            </a>
-            <SearchBar
-              searchPosts={this.searchPosts}
-              searchKeyword={this.state.searchKeyword}
-            />
-            <nav className="menu-container">
-              <button>Explore</button>
-              <button>Likes</button>
-              <button>Profile</button>
-            </nav>
-          </div>
-        </header>
+        <Header searchPostsFunction={this.searchPosts} />
         <div className="main-content-container">
           <PostsContainer
             posts={this.state.posts}
