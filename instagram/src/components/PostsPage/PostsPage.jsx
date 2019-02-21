@@ -9,6 +9,7 @@ import logoIcon from '../../assets/ig-logo-icon.svg';
 class PostsPage extends Component {
   constructor(props) {
     super(props);
+    
     this.prefix = props.appPrefix;
     this.storedPostsData = JSON.parse(localStorage.getItem(this.prefix + '_posts'));
     this.storedUserData = localStorage.getItem(this.prefix + '_user');
@@ -20,15 +21,17 @@ class PostsPage extends Component {
   }
 
   componentDidMount() {
+    // When there are no posts, pull posts from database
     if (this.state.posts.length === 0) {
       const dataWithIdAndDisplayKeys = fakeData.map(post => ({
         ...post,
         display: true
       }));
 
-      this.setState({ posts: dataWithIdAndDisplayKeys});
+      this.setState({ posts: dataWithIdAndDisplayKeys });
     }
 
+    // Save username to state from props
     if (!this.state.myUsername) {
       this.setState({ myUsername: this.props.user.username });
     }
@@ -40,7 +43,7 @@ class PostsPage extends Component {
   }
 
   searchPosts = searchKeyword => {
-    window.scrollTo(0, 0);
+    window.scrollTo(0, 0); // Make filtered posts appear at the top
     const posts = this.state.posts;
     const filteredPostsDisplayed = posts.map(post => {
       if (post.username.includes(searchKeyword)) {

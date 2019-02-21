@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CommentsContainer from '../CommentsContainer/CommentsContainer';
 import { arrayOf, string, number, shape } from 'prop-types';
+import './Post.css';
 
 class Post extends Component {
   constructor(props) {
