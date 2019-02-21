@@ -1,7 +1,39 @@
 import React, { Component } from 'react';
-import './LoginPage.css';
+import styled from 'styled-components';
+import logo from '../../assets/ig-logo.png';
 
-class LoginPage extends Component {
+const LoginPageContainer = styled.div`
+  width: 100vw;
+  height: 100vh;
+`;
+
+const LoginForm = styled.form`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40rem;
+  padding: 3rem 3rem 7rem;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #dbdbdb;
+  background-color: white;
+`;
+
+const LoginLogo = styled.div`
+  background-image: url(${logo});
+  background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 5.3rem;
+  width: 17.5rem;
+  margin-bottom: 1.5rem;
+`;
+
+export default class LoginPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -22,13 +54,12 @@ class LoginPage extends Component {
 
   render() {
     return (
-      <div className="login-page-container">
-        <form
+      <LoginPageContainer>
+        <LoginForm
           type="submit"
           onSubmit={e => this.onLoginSubmit(e)}
-          className="login-form"
         >
-          <div className="login-logo"></div>
+          <LoginLogo />
           <input
             type="text"
             value={this.state.username}
@@ -47,10 +78,8 @@ class LoginPage extends Component {
             className="full-width"
           />
         <button type="submit" className="btn-primary full-width">Log In</button>
-        </form>
-      </div>
+        </LoginForm>
+      </LoginPageContainer>
     );
   }
 }
-
-export default LoginPage;
