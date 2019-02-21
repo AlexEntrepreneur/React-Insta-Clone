@@ -37,6 +37,15 @@ const StyledPost = styled.article`
   }
 `;
 
+const PostButton = styled(TextButton)`
+  padding-left: 0;
+  text-align: left;
+
+  &.liked-true {
+    color: #f54d5a;
+  }
+`;
+
 const CommentForm = styled.form`
   display: flex;
   padding: 2rem 1.5rem;
@@ -109,10 +118,10 @@ class Post extends Component {
           <img className="full-width" src={postContent} alt={`posted by ${username}`} />
         </div>
         <div className="post-btns-container">
-          <TextButton
+          <PostButton
             onClick={() => this.onLikeButtonClick(this.state.liked)}
-            className={`liked-${this.state.liked}`}>Like</TextButton>
-          <TextButton>Comment</TextButton>
+            className={`liked-${this.state.liked}`}>Like</PostButton>
+          <PostButton>Comment</PostButton>
         </div>
         <Likes>
           { `${likes} likes` }
