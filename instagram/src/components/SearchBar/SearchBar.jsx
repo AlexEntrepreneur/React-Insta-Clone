@@ -1,6 +1,34 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
 import searchIcon from '../../assets/magnifying-glass.svg';
-import './SearchBar.css';
+
+const StyledSearchBar = styled.div`
+  background: #fafafa;
+  border: solid 1px #dbdbdb;
+  border-radius: 3px;
+  height: 2.8rem;
+  display: flex;
+  align-items: center;
+
+  & img {
+    height: 1.1rem;
+    margin: 0 1rem;
+    margin-right: 0;
+  }
+
+  /* Input Styles */
+
+  & input {
+    height: 100%;
+    background: unset;
+    border: none;
+    line-height: unset;
+
+    &:last-of-type {
+      margin: 0;
+    }
+  }
+`;
 
 class SearchBar extends Component {
   constructor(props) {
@@ -17,7 +45,7 @@ class SearchBar extends Component {
 
   render() {
     return(
-      <div className="search-box">
+      <StyledSearchBar>
         <img src={searchIcon} alt="magnifying glass icon" />
         <input
           onChange={event => this.onSearchInputChange(event) }
@@ -25,7 +53,7 @@ class SearchBar extends Component {
           type="text"
           placeholder="Search"
         />
-      </div>
+    </StyledSearchBar>
     );
   }
 }
