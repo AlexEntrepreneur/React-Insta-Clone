@@ -1,44 +1,8 @@
-.card {
-  border: solid 1px #dbdbdb;
-  border-radius: .3rem;
-  background-color: white;
-}
-
-.post-card {
-  margin-bottom: 6rem;
-}
-
-.post-card header {
-  height: 6rem;
-  display: flex;
-  align-items: center;
-  padding: 0 1.5rem;
-}
-
-.post-card-avatar {
-  height: 3.5rem;
-  width: 3.5rem;
-  border: 1px solid #dbdbdb;
-  border-radius: 100%;
-  margin-right: 1.5rem;
-}
-
-.post-card-avatar img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 100%;
-}
-
-.post-img-container img {
-  width: 100%;
-}
-
 .post-btns-container {
   height: 4rem;
   display: flex;
   align-items: center;
+  padding: 0 1.5rem;
 }
 
 .post-btns-container button {
@@ -51,27 +15,4 @@
 
 .post-btns-container .liked-true {
   color: #f54d5a;
-}
-
-.post-btns-container, .likes {
-  padding: 0 1.5rem;
-}
-
-.likes {
-  font-weight: bold;
-  line-height: 1.8rem;
-  margin-bottom: .8rem;
-}
-
-.comment-form {
-  display: flex;
-  padding: 2rem 1.5rem;
-  border-top: 1px solid #dbdbdb;
-}
-
-.comment-form textarea {
-  border: none;
-  background-color: unset;
-  line-height: unset;
-  margin: 0;
 }

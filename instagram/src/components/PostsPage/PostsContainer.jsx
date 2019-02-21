@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
 import Post from './Post';
-import './PostsContainer.css';
+
+const StyledPostsContainer = styled.div`
+  width: 100%;
+  max-width: 62%;
+  margin: 0 auto;
+  margin-top: 6rem;
+`;
 
 class PostsContainer extends Component {
   render() {
     return (
-      <div className="posts-container">
+      <StyledPostsContainer>
         {
           this.props.posts.map((postData, index) =>
             <Post
@@ -23,7 +30,7 @@ class PostsContainer extends Component {
             />
           )
         }
-      </div>
+      </StyledPostsContainer>
     );
   }
 }

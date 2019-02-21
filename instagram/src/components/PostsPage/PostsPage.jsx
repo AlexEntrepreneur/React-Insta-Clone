@@ -1,7 +1,18 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
 import fakeData from '../../dummy-data';
 import PostsContainer from './PostsContainer';
 import Header from '../Header/Header';
+
+const LogOutBtn = styled.button`
+  position: fixed;
+  right: 3rem;
+  bottom: 3rem;
+  background-color: unset;
+  font-size: 1.6rem;
+  color: #262626;
+  opacity: .8;
+`;
 
 class PostsPage extends Component {
   constructor(props) {
@@ -117,12 +128,11 @@ class PostsPage extends Component {
             likeUnlikePostFunction={this.likeUnlikePost}
           />
         </div>
-        <button
+        <LogOutBtn
           onClick={this.props.logOut}
-          className="log-out-btn"
         >
           Log Out
-        </button>
+        </LogOutBtn>
       </>
     );
   }
