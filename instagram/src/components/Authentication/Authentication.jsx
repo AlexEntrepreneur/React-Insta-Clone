@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 
-export default function authenticate (AppComponent) {
-  return class Authentication extends Component {
-    constructor() {
-      super();
+export default function authenticate (AppComponent, appPrefix) {
 
-      this.storedAuthStatus = localStorage.getItem('ig_is_authed');
+  return class Authentication extends Component {
+    constructor(props) {
+      super(props);
+
+      this.storedAuthStatus = localStorage.getItem(appPrefix + '_is_authed');
 
       this.state = {
         isAuthed: this.storedAuthStatus || false,
@@ -24,8 +25,8 @@ export default function authenticate (AppComponent) {
             user: { username: username }
           },
           () => {
-            localStorage.setItem('ig_is_authed', true);
-            localStorage.setItem('ig_user', username);
+            localStorage.setItem(appPrefix + '_is_authed', true);
+            localStorage.setItem(appPrefix + '_user', username);
           }
         );
       }
@@ -34,7 +35,7 @@ export default function authenticate (AppComponent) {
     logOut = () => {
       function clearLocalStorageItems() {
         for (let key in localStorage) {
-          if (key.includes('ig_')) {
+          if (key.includes(appPrefix + '_')) {
             localStorage.removeItem(key);
           }
         }
@@ -56,6 +57,7 @@ export default function authenticate (AppComponent) {
           logInFunction={this.logIn}
           logOutFunction={this.logOut}
           user={this.state.user}
+          appPrefix={appPrefix}
         />
       );
     }

@@ -8,7 +8,11 @@ class App extends Component {
   render() {
     if (this.props.isAuthed) {
       return (
-        <PostsPage logOut={this.props.logOutFunction} user={this.props.user} />
+        <PostsPage
+          logOut={this.props.logOutFunction}
+          user={this.props.user}
+          appPrefix={this.props.appPrefix}
+        />
       );
     }
     return (

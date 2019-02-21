@@ -7,11 +7,11 @@ import logo from '../../assets/ig-logo.png';
 import logoIcon from '../../assets/ig-logo-icon.svg';
 
 class PostsPage extends Component {
-  constructor() {
-    super();
-
-    this.storedPostsData = JSON.parse(localStorage.getItem('ig_posts'));
-    this.storedUserData = localStorage.getItem('ig_user');
+  constructor(props) {
+    super(props);
+    this.prefix = props.appPrefix;
+    this.storedPostsData = JSON.parse(localStorage.getItem(this.prefix + '_posts'));
+    this.storedUserData = localStorage.getItem(this.prefix + '_user');
 
     this.state = {
       posts: this.storedPostsData || [],
@@ -36,7 +36,7 @@ class PostsPage extends Component {
 
   componentDidUpdate() {
     const postsAsString = JSON.stringify(this.state.posts);
-    localStorage.setItem('ig_posts', postsAsString);
+    localStorage.setItem(this.prefix + '_posts', postsAsString);
   }
 
   searchPosts = searchKeyword => {
