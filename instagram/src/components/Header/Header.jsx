@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components';
-import '../../Header.css';
 import SearchBar from '../SearchBar/SearchBar';
 import logo from '../../assets/ig-logo.png';
 import logoIcon from '../../assets/ig-logo-icon.svg';
