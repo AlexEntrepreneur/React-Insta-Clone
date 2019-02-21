@@ -3,14 +3,13 @@ import styled from 'styled-components';
 import fakeData from '../../dummy-data';
 import PostsContainer from './PostsContainer';
 import Header from '../Header/Header';
+import { TextButton } from '../~reusables/Button';
 
-const LogOutBtn = styled.button`
+const LogOutBtn = styled(TextButton)`
   position: fixed;
   right: 3rem;
   bottom: 3rem;
-  background-color: unset;
   font-size: 1.6rem;
-  color: #262626;
   opacity: .8;
 `;
 

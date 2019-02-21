@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import { ButtonPrimary } from '../~reusables/Button';
 import logo from '../../assets/ig-logo.png';
 
 const LoginPageContainer = styled.div`
@@ -77,7 +78,11 @@ export default class LoginPage extends Component {
             name="password"
             className="full-width"
           />
-        <button type="submit" className="btn-primary full-width">Log In</button>
+        <ButtonPrimary
+          type="submit"
+          className="full-width"
+          disabled={this.state.username === ''}
+        >Log In</ButtonPrimary>
         </LoginForm>
       </LoginPageContainer>
     );

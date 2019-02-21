@@ -27,30 +27,6 @@ body {
   display: block;
 }
 
-button {
-  font-size: inherit;
-  font-weight: bold;
-  border: none;
-  color: #3897f0;
-  outline: none;
-  cursor: pointer;
-}
-
-button.btn-primary {
-  background-color: #3897f0;
-  color: white;
-  padding: .7rem .9rem;
-  border-radius: .4rem;
-}
-
-button:active, button:disabled {
-  opacity: .7;
-}
-
-button:disabled {
-  cursor: default;
-}
-
 input, textarea {
   margin-bottom: .6rem;
   line-height: 3.6rem;

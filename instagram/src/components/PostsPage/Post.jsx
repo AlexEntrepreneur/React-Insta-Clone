@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import CommentsContainer from '../CommentsContainer/CommentsContainer';
 import { arrayOf, string, number, shape } from 'prop-types';
+import { TextButton, TextButtonPrimary } from '../~reusables/Button';
 import './Post.css';
 
 const StyledPost = styled.article`
@@ -108,10 +109,10 @@ class Post extends Component {
           <img className="full-width" src={postContent} alt={`posted by ${username}`} />
         </div>
         <div className="post-btns-container">
-          <button
+          <TextButton
             onClick={() => this.onLikeButtonClick(this.state.liked)}
-            className={`liked-${this.state.liked}`}>Like</button>
-          <button>Comment</button>
+            className={`liked-${this.state.liked}`}>Like</TextButton>
+          <TextButton>Comment</TextButton>
         </div>
         <Likes>
           { `${likes} likes` }
@@ -128,7 +129,7 @@ class Post extends Component {
             className="comment-box full-width"
             type="text"
             placeholder="Add a comment..." />
-          <button type="submit" disabled={false}>Post</button>
+          <TextButtonPrimary type="submit" disabled={false}>Post</TextButtonPrimary>
         </CommentForm>
       </StyledPost>
     );

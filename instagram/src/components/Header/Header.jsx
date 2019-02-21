@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import SearchBar from '../SearchBar/SearchBar';
+import { TextButton } from '../~reusables/Button';
 import logo from '../../assets/ig-logo.png';
 import logoIcon from '../../assets/ig-logo-icon.svg';
 
@@ -48,9 +49,9 @@ class Header extends React.Component {
             searchPosts={this.props.searchPostsFunction}
           />
           <nav className="menu-container">
-            <button>Explore</button>
-            <button>Likes</button>
-            <button>Profile</button>
+            <TextButton>Explore</TextButton>
+            <TextButton>Likes</TextButton>
+            <TextButton>Profile</TextButton>
           </nav>
         </HeaderContainer>
       </IGHeader>
