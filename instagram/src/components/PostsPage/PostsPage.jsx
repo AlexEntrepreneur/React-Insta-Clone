@@ -108,7 +108,7 @@ class PostsPage extends Component {
 
   render() {
     return (
-      <div className="App">
+      <>
         <Header searchPostsFunction={this.searchPosts} />
         <div className="main-content-container">
           <PostsContainer
@@ -123,7 +123,7 @@ class PostsPage extends Component {
         >
           Log Out
         </button>
-      </div>
+      </>
     );
   }
 }
